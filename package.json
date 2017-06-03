@@ -1,0 +1,38 @@
+ {
+  "name": "hapi-pagination-example",
+  "version": "1.0.0",
+  "description": "An Example Hapi + Hapi-Pagination + Glue",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambrons/hapi-pagination-example.git"
+  },
+  "keywords": [
+    "hapi-pagination",
+    "hapi",
+    "node-config",
+    "config",
+    "glue"
+  ],
+  "author": "Adam Brons",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambrons/hapi-pagination-example/issues"
+  },
+  "homepage": "https://github.com/ambrons/hapi-pagination-example#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-hapi": "^10.0.0",
+    "eslint-plugin-hapi": "^4.0.0"
+  },
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "config": "^1.26.1",
+    "glue": "^4.1.0",
+    "hapi-pagination": "^1.20.0"
+  }
+}

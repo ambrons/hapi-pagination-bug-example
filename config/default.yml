@@ -1,0 +1,54 @@
+connections:
+  -
+    port: 3000
+    labels: ['api', 'private']
+    routes:
+      timeout:
+        server: 10000
+  -
+    port: 3001
+    labels: ['api', 'public']
+    routes:
+      timeout:
+        server: 10000
+registrations:
+  - plugin: blipp
+  -
+    plugin:
+      register: hapi-pagination
+      options:
+        routes:
+          include: []
+        meta:
+          baseUri: ''
+    options:
+      routes:
+        prefix: '/base'
+      select: ['private', 'public']
+  -
+    plugin:
+      register: good
+      options:
+        ops:
+          interval: 5000
+        includes:
+          request:
+            - headers
+        reporters:
+          console:
+            - module: good-squeeze
+              name: Squeeze
+              args:
+                - log: '*'
+                  response: '*'
+            - module: good-console
+              args:
+                - color: false
+            - stdout
+  -
+    plugin:
+      register: './example'
+    options:
+      routes:
+        prefix: '/base'
+      select: ['api', 'private']
